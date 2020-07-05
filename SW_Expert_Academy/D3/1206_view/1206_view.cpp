@@ -9,7 +9,6 @@ int main(){
     int T = 10;
     for(int test=1; test<= T; test++){
         ans = 0;
-        Max = 99999;
         int temp1, temp2;
         int n, x;
         cin >> n;
