@@ -1,4 +1,4 @@
-//唱公 力抛农
+//唱公 犁抛农
 #include <iostream>
 #include <algorithm>
 #include <vector>
