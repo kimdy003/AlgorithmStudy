@@ -5,7 +5,7 @@
 using namespace std;
 
 bool cmp(pair<int, string> a, pair<int, string> b){
-    return a.first < b.first;
+    return a.first > b.first;
 }
 
 vector<string> strtok(string s, char delim = ' '){
@@ -97,7 +97,7 @@ string solution(string m, vector<string> musicinfos) {
 }
 
 int main(){
-    string arr[5] = {"12:00,12:06,HELLO,ACCACC", "13:00,13:06,AAA,ACCACC","13:00,13:06,BBB,ACCACC","13:00,13:06,AAA,ACCACC","13:00,13:05,AAA,ACCACC"};
+    string arr[5] = {"12:00,12:05,HELLO,ACCACC", "13:00,13:05,AAA,ACCACC","13:00,13:06,BBB,ACCACC","13:00,13:06,AAA,ACCACC","13:00,13:05,AAA,ACCACC"};
     vector<string> v;
     string m = "CC";
 
