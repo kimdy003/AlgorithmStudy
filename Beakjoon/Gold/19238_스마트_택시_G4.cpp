@@ -46,6 +46,7 @@ void move(int use_fuel){
 
     sort(now_pass.begin(), now_pass.end(), cmp);
 
+    //(2) ??? ?? ?? ??? ???? ??
     if(taxi.oil < customer[now_pass[0].idx].distance){
         flag = false;
         return;
@@ -67,6 +68,7 @@ void driving(){
     check[taxi.y][taxi.x] = false;
     int cnt = 0;
     
+    //(1) ??? ?? ?? ??? ???? ??
     if(map[taxi.y][taxi.x] > 0){
         now_pass.push_back({taxi.y, taxi.x, map[taxi.y][taxi.x]-1});
         if(taxi.oil <= cnt){
@@ -96,6 +98,7 @@ void driving(){
 
                 if(map[nexty][nextx] > 0){
                     now_pass.push_back({nexty, nextx, map[nexty][nextx]-1});
+                    //(2) ??? ?? ?? ??? ???? ??
                     if(taxi.oil <= cnt){
                         flag = false;
                         return;
@@ -107,12 +110,14 @@ void driving(){
             }
         }
         
-
+        //(2) ??? ?? ??
         if(!now_pass.empty()){
             move(cnt);
             return;
         }
     }
+    //(3) ??? ????? ????, ??? ?? ??? ??
+    flag = false;
 }
 
 void passenger_distance(int idx){
@@ -166,17 +171,19 @@ int main(){
 
     cin >> taxi.y >> taxi.x;
 
-    //½Â°´ ÁÂÇ¥ ¹× Ãâ¹ßÁö¿¡¼­ µµÂøÁö °Å¸® ±¸ÇÏ±â
+    //1. ??? ??? ?? ? ????? ?????? ??
     for(int i=0; i<m; i++){
         memset(check, true, sizeof(check));
         cin >> customer[i].y >> customer[i].x >> customer[i].arry >> customer[i].arrx;
         map[customer[i].y][customer[i].x] = i+1;
         passenger_distance(i);
+        //(1) ??? ????? ???? ? ?? ?? ( ?? ???)
         if(customer[i].distance == 0){
             flag = false;
         }
     }
 
+    //2. ??? ???? ?? ??? ????? ?? ? ?? ??
     int count = 0;
     while(flag){
         if(count == m) break;
