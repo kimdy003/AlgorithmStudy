@@ -1,4 +1,4 @@
-//╢╨╫╨ е╛╥╞╫╨ем╦╣ 
+//К┴╢Л┼╓ М│╢К÷╛Л┼╓М└╟К╖│
 #include <string>
 #include <vector>
 #include <cctype>

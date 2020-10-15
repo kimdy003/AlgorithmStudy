@@ -1,4 +1,4 @@
-//카드 게임
+//移대뱶 寃뚯엫
 #include <iostream>
 using namespace std;
 

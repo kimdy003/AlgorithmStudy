@@ -1,4 +1,3 @@
-//은기의 송아지 세기
 #include <iostream>
 #include <cstring>
 using namespace std;
