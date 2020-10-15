@@ -20,7 +20,7 @@ int get_max(){
 void calculation(int type){
    queue<int> q;
 
-    //ÁÂ
+    //ì¢Œ
     if(type == 0){
         for(int i=0; i<n; i++){
             for(int j=n-1; j>=0; j--){
@@ -51,7 +51,7 @@ void calculation(int type){
 
     }
 
-    //¿ì
+    //ìš°
     if(type == 1){
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
@@ -81,7 +81,7 @@ void calculation(int type){
         }
     }
 
-    //»ó
+    //ìƒ
     if(type == 2){
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
@@ -111,7 +111,7 @@ void calculation(int type){
         }
     }
 
-   //ÇÏ
+   //í•˜
     if(type == 3){
         for(int i = 0; i<n; i++){
             for(int j = n-1; j>=0; j--){

@@ -6,14 +6,14 @@ int n, target;
 vector<int> v;
 
 #if 1
-//Àç±Í¸¦ ÀÌ¿ëÇÑ ÀÌÁø Å½»ö
+//ì¬ê·€ë¥¼ ì´ìš©í•œ ì´ì§„ íƒìƒ‰
 int Binary_Search(vector<int> v, int target, int start, int end){
     if(start > end)
         return -1;
 
     int mid = (start + end) / 2;
 
-    //Ã£Àº °æ¿ì Áß°£Á¡ ÀÎµ¦½º ¹İÈ¯
+    //ì°¾ì€ ê²½ìš° ì¤‘ê°„ì  ì¸ë±ìŠ¤ ë°˜í™˜
     if(v[mid] == target)
         return mid;
 
@@ -25,7 +25,7 @@ int Binary_Search(vector<int> v, int target, int start, int end){
 }
 
 #else
-//¹İº¹¹®À» ÀÌ¿ëÇÑ ÀÌÁø Å½»ö
+//ë°˜ë³µë¬¸ì„ ì´ìš©í•œ ì´ì§„ íƒìƒ‰
 int Binary_Search(vector<int> v, target, int start, int end){
     while(start <= end){
         int mid = (start + end) / 2;
@@ -55,7 +55,7 @@ int main(){
 
     int result = Binary_Search(v, target, 0, n);
     if (result == -1) {
-        cout << "¿ø¼Ò°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù." << '\n';
+        cout << "ì›ì†Œê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤." << '\n';
     }
     else {
         cout << result + 1 << '\n';

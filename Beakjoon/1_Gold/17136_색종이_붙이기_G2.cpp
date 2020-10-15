@@ -35,7 +35,7 @@ bool Can_Search(int y, int x, int size){
 }
 
 void Fill_paper(int y, int x, int size, bool flag){
-    //ºÎÂø || º¹±¸
+    //ë¶€ì°© || ë³µêµ¬
     for(int i=0; i<size; i++){
         for(int j=0; j<size; j++){
             if(flag)
@@ -70,13 +70,13 @@ void DFS(int idx, int cnt){
             continue;
 
         if(Can_Search(y, x, p) == true){
-            //ºÎÂø
+            //ë¶€ì°©
             Fill_paper(y, x, p, false);
             paper[p]++;
             //all_print();
             DFS(idx+1, cnt+1);
 
-            //¿ø»ó º¹±¸
+            //ì›ìƒ ë³µêµ¬
             Fill_paper(y, x, p, true);
             paper[p]--;
             //all_print();

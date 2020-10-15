@@ -28,7 +28,7 @@ void Make_Cycle(int idx, bool flag){
         }
     }
 
-    //½ÇÇà
+    //ì‹¤í–‰
     if(flag){
         int r = cycle[idx].first.first;
         int c = cycle[idx].first.second;
@@ -53,7 +53,7 @@ void Make_Cycle(int idx, bool flag){
             s -= 1;
         }
     }
-    //µÇµ¹¸®±â
+    //ë˜ëŒë¦¬ê¸°
     else{
         int r = cycle[idx].first.first;
         int c = cycle[idx].first.second;

@@ -1,4 +1,4 @@
-//Å©·ç½ºÄ® ¾Ë°í¸®Áò
+//í¬ë£¨ìŠ¤ì¹¼ ì•Œê³ ë¦¬ì¦˜
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -42,7 +42,7 @@ int main(){
 
     sort(edges.begin(), edges.end());
 
-    //°£¼±À» ÇÏ³ª¾¿ È®ÀÎÇÏ¸ç »çÀÌÅ¬ ¿©ºÎ È®ÀÎ
+    //ê°„ì„ ì„ í•˜ë‚˜ì”© í™•ì¸í•˜ë©° ì‚¬ì´í´ ì—¬ë¶€ í™•ì¸
     for(int i=0; i<edges.size(); i++){
         int cost = edges[i].first;
         int node1 = edges[i].second.first;

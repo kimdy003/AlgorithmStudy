@@ -9,7 +9,7 @@ typedef struct _CHESS{
 } CHESS;
 
 typedef struct _MAP_INFO{
-    //0: Èò»ö, 1: »¡°­, 2: ÆÄ¶û
+    //0: í°ìƒ‰, 1: ë¹¨ê°•, 2: íŒŒë‘
     int color;
     vector<int> v;
 } MAP_INFO;

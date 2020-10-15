@@ -1,4 +1,4 @@
-//À§»ó Á¤·Ä
+//ìœ„ìƒ ì •ë ¬
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -42,7 +42,7 @@ void TopologySort(){
 int main(){
     cin >> v >> e;
 
-    //¹æÇâ ±×·¡ÇÁ
+    //ë°©í–¥ ê·¸ë˜í”„
     for(int i=0; i<e; i++){
         int a, b; cin >> a >> b;
         graph[a].push_back(b);

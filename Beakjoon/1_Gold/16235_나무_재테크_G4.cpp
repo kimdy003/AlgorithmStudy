@@ -1,4 +1,4 @@
-//³ª¹« ÀçÅ×Å©
+//ë‚˜ë¬´ ìž¬í…Œí¬
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -21,9 +21,9 @@ void vec_sort(){
 }
 
 void spring_summer(){
-    //³ªÀÌ¸¸Å­ ¾çºÐ ¸Ô°í ³ªÀÌ 1Áõ°¡(¾î¸° ³ª¹«ºÎÅÍ)
-    //¾çºÐÀ» ¸ø ¸ÔÀ¸¸é Á×À½
-    //Á×Àº ³ª¹«´Â ¾çºÐÀ¸·Î
+    //ë‚˜ì´ë§Œí¼ ì–‘ë¶„ ë¨¹ê³  ë‚˜ì´ 1ì¦ê°€(ì–´ë¦° ë‚˜ë¬´ë¶€í„°)
+    //ì–‘ë¶„ì„ ëª» ë¨¹ìœ¼ë©´ ì£½ìŒ
+    //ì£½ì€ ë‚˜ë¬´ëŠ” ì–‘ë¶„ìœ¼ë¡œ
     
     for(int i=1; i<=n; i++){
         for(int j=1; j<=n; j++){
@@ -53,8 +53,8 @@ void spring_summer(){
 }
 
 void fall(){
-    //³ªÀÌ°¡ 5ÀÇ ¹è¼ö ³ª¹«µé ¹ø½Ä
-    //ÀÎÁ¢ÇÑ 8Ä­¿¡ ³ª¹« Áõ°¡
+    //ë‚˜ì´ê°€ 5ì˜ ë°°ìˆ˜ ë‚˜ë¬´ë“¤ ë²ˆì‹
+    //ì¸ì ‘í•œ 8ì¹¸ì— ë‚˜ë¬´ ì¦ê°€
 
     for(int i=1; i<=n; i++){
         for(int j=1; j<=n; j++){
@@ -76,7 +76,7 @@ void fall(){
 }
 
 void winter(){
-    //·Îº¿ÀÌ µ¹¾Æ´Ù´Ï¸é¼­ ¾çºÐ Ãß°¡
+    //ë¡œë´‡ì´ ëŒì•„ë‹¤ë‹ˆë©´ì„œ ì–‘ë¶„ ì¶”ê°€
     for(int i=1; i<=n; i++){
         for(int j=1; j<=n; j++){
             map[i][j] += eat_add[i][j];

@@ -4,20 +4,20 @@
 using namespace std;
 
 /*
-    (1) Ãâ¹ß ³ëµå¸¦ ¼³Á¤
-    (2) ÃÖ´Ü °Å¸® ¹è¿­À» ¹«ÇÑÀ¸·Î ÃÊ±âÈ­
-    (3) ¹æ¹® ÇÏÁö ¾Ê´Â ³ëµå Áß¿¡¼­ ÃÖ´Ü °Å¸®°¡ °¡Àå ÂªÀº ³ëµå¸¦ ¼±ÅÃ
-    (4) ÇØ´ç ³ëµå¸¦ °ÅÃÄ ´Ù¸¥ ³ëµå·Î °¡´Â ºñ¿ëÀ» °è»êÇÏ¿© ÃÖ´Ü °Å¸® ¹è¿­À» °»½Å
-    (5) (3)~(4)¹ø ¹Ýº¹
+    (1) ì¶œë°œ ë…¸ë“œë¥¼ ì„¤ì •
+    (2) ìµœë‹¨ ê±°ë¦¬ ë°°ì—´ì„ ë¬´í•œìœ¼ë¡œ ì´ˆê¸°í™”
+    (3) ë°©ë¬¸ í•˜ì§€ ì•ŠëŠ” ë…¸ë“œ ì¤‘ì—ì„œ ìµœë‹¨ ê±°ë¦¬ê°€ ê°€ìž¥ ì§§ì€ ë…¸ë“œë¥¼ ì„ íƒ
+    (4) í•´ë‹¹ ë…¸ë“œë¥¼ ê±°ì³ ë‹¤ë¥¸ ë…¸ë“œë¡œ ê°€ëŠ” ë¹„ìš©ì„ ê³„ì‚°í•˜ì—¬ ìµœë‹¨ ê±°ë¦¬ ë°°ì—´ì„ ê°±ì‹ 
+    (5) (3)~(4)ë²ˆ ë°˜ë³µ
 */
 
-const int INF = 1e9; //¹«ÇÑÀ» ÀÇ¹Ì, 10¾ï
-//³ëµå, °£¼±, ½ÃÀÛ ³ëµå
+const int INF = 1e9; //ë¬´í•œì„ ì˜ë¯¸, 10ì–µ
+//ë…¸ë“œ, ê°„ì„ , ì‹œìž‘ ë…¸ë“œ
 int n, m, start;
 vector<pair<int, int>> graph[10001];
-//¹æ¹® Ã¼Å© bool ¹è¿­
+//ë°©ë¬¸ ì²´í¬ bool ë°°ì—´
 bool visit[10001];
-//ÃÖ´Ü °Å¸® ÀúÀå ¹è¿­
+//ìµœë‹¨ ê±°ë¦¬ ì €ìž¥ ë°°ì—´
 int Dist[10001];
 
 int GetSmallestNode(){
@@ -40,9 +40,9 @@ void Dijkstra(int start){
         Dist[graph[start][i].first] = graph[start][i].second;
     }
 
-    //½ÃÀÛ ³ëµå¸¦ Á¦¿ÜÇÑ ÀüÃ¼ ³ëµå¿¡ ´ëÇØ ¹Ýº¹
+    //ì‹œìž‘ ë…¸ë“œë¥¼ ì œì™¸í•œ ì „ì²´ ë…¸ë“œì— ëŒ€í•´ ë°˜ë³µ
     for(int i=0; i<n-1; i++){
-        //ÇöÀç ÃÖ´Ü °Å¸®°¡ °¡Àå ÂªÀº ³ëµå¸¦ ²¨³», ¹æ¹® Ã³¸®
+        //í˜„ìž¬ ìµœë‹¨ ê±°ë¦¬ê°€ ê°€ìž¥ ì§§ì€ ë…¸ë“œë¥¼ êº¼ë‚´, ë°©ë¬¸ ì²˜ë¦¬
         int now = GetSmallestNode();
         visit[now] = false;
 
@@ -66,16 +66,16 @@ int main(){
         graph[a].push_back({b, c});
     }
 
-    //(½ÃÀÛ ÁÖ¼Ò, º¯°æÇÒ ¿ø¼Ò °³¼ö, º¯°æ °ª)
+    //(ì‹œìž‘ ì£¼ì†Œ, ë³€ê²½í•  ì›ì†Œ ê°œìˆ˜, ë³€ê²½ ê°’)
     fill_n(Dist, 10001, INF);
     //fill(Dist, Dist+10001, INF);
 
     Dijkstra(start);
 
     for(int i=0; i<=n; i++){
-        //µµ´Þ ÇÒ ¼ö ¾ø´Â °æ¿ì
+        //ë„ë‹¬ í•  ìˆ˜ ì—†ëŠ” ê²½ìš°
         if(Dist[i] == INF)
-            cout << "¹«ÇÑ" << "\n";
+            cout << "ë¬´í•œ" << "\n";
         else
             cout << Dist[i] << "\n";
     }

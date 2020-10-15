@@ -72,7 +72,7 @@ void DFS(int idx){
             if(GwalHo[i] == false && GwalHo[i+1] == false){
                 GwalHo[i] = true;
                 GwalHo[i+2] = true;
-                //idx+2·Î º¸³»±â
+                //idx+2ë¡œ ë³´ë‚´ê¸°
                 DFS(idx+2);
 
                 GwalHo[i] = false;
@@ -81,7 +81,7 @@ void DFS(int idx){
         }
 
         else{
-            //¸¶Áö¸· ¼ıÀÚ, idx == n À¸·Î ¸ÂÃß±â
+            //ë§ˆì§€ë§‰ ìˆ«ì, idx == n ìœ¼ë¡œ ë§ì¶”ê¸°
             DFS(i+1);
         }
     }

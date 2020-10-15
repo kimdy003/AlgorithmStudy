@@ -17,16 +17,16 @@ void Clockwise(int num){
         }
     }
 
-    //À­ ¿­
+    //ìœ— ì—´
     for(int i=0; i<3; i++){
         Cube[num][0][i] = Copy2d[2-i][0];
     }
 
-    //°¡¿îµ¥¿­
+    //ê°€ìš´ë°ì—´
     Cube[num][1][0] = Copy2d[2][1];
     Cube[num][1][2] = Copy2d[0][1];
 
-    //¸¶Áö¸·
+    //ë§ˆì§€ë§‰
     for(int i=0; i<3; i++){
         Cube[num][2][i] = Copy2d[2- i][2];
     }
@@ -39,16 +39,16 @@ void CounterClockwise(int num){
         }
     }
 
-    //À­¿­
+    //ìœ—ì—´
     for(int i=0; i<3; i++){
         Cube[num][0][i] = Copy2d[i][2];
     }
 
-    //°¡¿îµ¥
+    //ê°€ìš´ë°
     Cube[num][1][0] = Copy2d[0][1];
     Cube[num][1][2] = Copy2d[2][1];
 
-    //¸¶Áö¸·
+    //ë§ˆì§€ë§‰
     for(int i=0; i<3; i++){
         Cube[num][2][i] = Copy2d[i][0];
     }

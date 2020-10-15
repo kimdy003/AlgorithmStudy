@@ -2,18 +2,18 @@
 #include <cstring>
 using namespace std;
 
-//¾ËÆÄºª ¼ö
+//ì•ŒíŒŒë²³ ìˆ˜
 const int MAX = 26;
 
-// ±¸Á¶Ã¼¸¦ ¸¸µå´Â ÀÌÀ¯´Â ±¸Á¶Ã¼ÀÇ 
-// default°¡ publicÀÌ±â ¶§¹®
+// êµ¬ì¡°ì²´ë¥¼ ë§Œë“œëŠ” ì´ìœ ëŠ” êµ¬ì¡°ì²´ì˜ 
+// defaultê°€ publicì´ê¸° ë•Œë¬¸
 struct TRIE
 {
-    //°¢ ¿µ¾î ¾ËÆÄºª¿¡ ´ëÇÑ trie ³ëµå »ı¼º
+    //ê° ì˜ì–´ ì•ŒíŒŒë²³ì— ëŒ€í•œ trie ë…¸ë“œ ìƒì„±
     TRIE *Node[MAX];
     bool Finish;
 
-    //»ı¼ºÀÚ
+    //ìƒì„±ì
     TRIE() : Finish(false) {
     #if 1
         for(int i=0; i<MAX; i++){
@@ -24,7 +24,7 @@ struct TRIE
     #endif
     }
 
-    //¼Ò¸êÀÚ
+    //ì†Œë©¸ì
     ~TRIE(){
         for(int i=0; i<MAX; i++){
             if(Node[i])
@@ -44,7 +44,7 @@ struct TRIE
         Node[Cur]->INSERT(Str+1);
     }
 
-    //¸¶Áö¸· È®ÀÎ
+    //ë§ˆì§€ë§‰ í™•ì¸
     bool CALL(const char *Str){
         if(*Str == '\0')
             return true;
@@ -56,7 +56,7 @@ struct TRIE
         return Node[Cur]->CALL(Str+1);
     }
 
-    //ÇØ´ç Á¢µÎ¾î°¡ ³¡³ª´Â ºÎºĞÀÇ À§Ä¡¸¦ ¹İÈ¯
+    //í•´ë‹¹ ì ‘ë‘ì–´ê°€ ëë‚˜ëŠ” ë¶€ë¶„ì˜ ìœ„ì¹˜ë¥¼ ë°˜í™˜
     TRIE *FIND(const char *Str){
         if(*Str == '\0')
             return this;
@@ -72,7 +72,7 @@ struct TRIE
 
 int main(){
 #if 0
-    //eof°¡ ³ª¿Ã¶§±îÁö °è¼Ó ¹Ş±â
+    //eofê°€ ë‚˜ì˜¬ë•Œê¹Œì§€ ê³„ì† ë°›ê¸°
     while(1){
         string s;
         getline(cin, s, '\n');

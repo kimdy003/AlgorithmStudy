@@ -10,7 +10,7 @@ vector<pair<int, int>> vec[20001];
 
 void Dijstra(){
     priority_queue<pair<int, int>> pq;
-    // °¡ÁßÄ¡, ³ëµå ¼ø¼­ (°¡ÁßÄ¡¿¡ ´ëÇÑ ¿À¸§Â÷¼øÀ» ¸¸µé±â À§ÇØ)
+    // ê°€ì¤‘ì¹˜, ë…¸ë“œ ìˆœì„œ (ê°€ì¤‘ì¹˜ì— ëŒ€í•œ ì˜¤ë¦„ì°¨ìˆœì„ ë§Œë“¤ê¸° ìœ„í•´)
     pq.push({0, K});
     Dist[K] = 0;
 
@@ -36,7 +36,7 @@ int main(){
     for(int i=0; i<E; i++){
         int a, b, w;
         cin >> a >> b >> w;
-        //³ëµå, °¡ÁßÄ¡ ¼ø¼­
+        //ë…¸ë“œ, ê°€ì¤‘ì¹˜ ìˆœì„œ
         vec[a].push_back({b, w});
     }
 

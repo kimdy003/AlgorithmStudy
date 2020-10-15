@@ -32,7 +32,7 @@ int main(){
         if(0<= location.x && location.x <n && 0<= location.y && location.y<m){
             switch (dir)
             {
-            //悼率
+            //霃欖
             case 1:
                 temp = dice[1];
                 dice[1] = dice[4];
@@ -41,7 +41,7 @@ int main(){
                 dice[3] = temp; 
                 break;
 
-            //辑率
+            //靹滌
             case 2:
                 temp = dice[1];
                 dice[1] = dice[3];
@@ -50,7 +50,7 @@ int main(){
                 dice[4] = temp;
                 break;
 
-            //合率
+            //攵侅
             case 3:
                 temp = dice[1];
                 dice[1] = dice[5];
@@ -59,7 +59,7 @@ int main(){
                 dice[2] = temp;
                 break;
 
-            //巢率
+            //雮
             case 4:
                 temp = dice[1];
                 dice[1] = dice[2];

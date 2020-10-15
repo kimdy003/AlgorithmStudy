@@ -10,14 +10,14 @@ bool del(){
     bool check[51][51];
     memset(check, false, sizeof(check));
 
-    //ÀÎÁ¢ÇÑ Á¡¼ö ¾ø¾Ö±â
+    //ì¸ì ‘í•œ ì ìˆ˜ ì—†ì• ê¸°
     bool del_flag = false;
     for(int i=1; i<=n; i++){
         for(int j=0; j<m; j++){
             if(dq[i][j] == 0) continue;
 
             bool flag = false;
-            //À§ ¾Æ·¡
+            //ìœ„ ì•„ë˜
             if(i+1 <= n){
                 if(dq[i][j] == dq[i+1][j]){
                     check[i+1][j] = true;
@@ -31,7 +31,7 @@ bool del(){
                 }
             }
 
-            //¾ç ¿·
+            //ì–‘ ì˜†
             int cur_l = j-1 < 0 ? m-1 : j-1;
             int cur_r = j+1 >= m ? 0 : j+1;
             if(dq[i][j] == dq[i][cur_l]){
@@ -43,8 +43,8 @@ bool del(){
                 flag = true;
             }
 
-            //ÇÏ³ª¶óµµ Áö¿î°Ô ÀÖ´Ù¸é
-            //ÇöÀç À§Ä¡ÀÇ check¸¦ true
+            //í•˜ë‚˜ë¼ë„ ì§€ìš´ê²Œ ìˆë‹¤ë©´
+            //í˜„ì¬ ìœ„ì¹˜ì˜ checkë¥¼ true
             if(flag){
                 check[i][j] = true;
                 del_flag = true;
@@ -83,12 +83,12 @@ void avg(){
         for(int j=0; j<m; j++){
             if(dq[i][j] == 0) continue;
 
-            // Æò±Õº¸´Ù ³·À¸¸é
+            // í‰ê· ë³´ë‹¤ ë‚®ìœ¼ë©´
             if(avage - (double)dq[i][j] > 0 ){
                 dq[i][j] += 1;
             }
 
-            //Æò±Õº¸´Ù ³ôÀ¸¸é
+            //í‰ê· ë³´ë‹¤ ë†’ìœ¼ë©´
             else if(avage - (double)dq[i][j] < 0){
                 dq[i][j] -= 1;
             }
@@ -97,11 +97,11 @@ void avg(){
 }
 
 void cycle(int x, int d, int k){
-    //¿øÆÇ µ¹¸®±â
+    //ì›íŒ ëŒë¦¬ê¸°
     for(int i=1; i<=n; i++){
         if(i%x == 0){
             for(int j=0; j<k; j++){
-                //½Ã°è¹æÇâ
+                //ì‹œê³„ë°©í–¥
                 if(d == 0){
                     dq[i].push_front(dq[i].back());
                     dq[i].pop_back();

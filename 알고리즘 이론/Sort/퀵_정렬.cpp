@@ -1,10 +1,11 @@
 #include <iostream>
+
 using namespace std;
 
-int data[10] = {4,9,5,7,1,6,8,3,2,10};
+int Date[10] = {4,9,5,7,1,6,8,3,2,10};
 
-void quick(int *data, int start, int end){
-    //¿ø¼Ò°¡ 1ÀÎ ºÎºĞÀ» »ı°¢ ¸øÇßÀ½ -> ºí·Î±× Âü°í
+void quick(int *Date, int start, int end){
+    //ì›ì†Œê°€ 1ì¸ ë¶€ë¶„ì„ ìƒê° ëª»í–ˆìŒ -> ë¸”ë¡œê·¸ ì°¸ê³ 
     if(start >= end){
         return;
     }
@@ -15,35 +16,35 @@ void quick(int *data, int start, int end){
     int temp;
 
     while(left < right){
-        while(data[left] <= data[key]){
+        while(Date[left] <= Date[key]){
             left++;
         }
-        while(data[right] >= data[key] && right > start){
+        while(Date[right] >= Date[key] && right > start){
             right--;
         }
 
         if(left < right){
-            temp = data[right];
-            data[right] = data[left];
-            data[left] = temp;
+            temp = Date[right];
+            Date[right] = Date[left];
+            Date[left] = temp;
         }
         else{
-            temp = data[key];
-            data[key] = data[right];
-            data[right] = temp;
+            temp = Date[key];
+            Date[key] = Date[right];
+            Date[right] = temp;
         }
     }
 
-    quick(data, start, right-1);
-    quick(data, right+1, end);
+    quick(Date, start, right-1);
+    quick(Date, right+1, end);
 
 
 }
 
 
 int main(){
-    quick(data, 0, 9);
+    quick(Date, 0, 9);
     for(int i=0; i< 10; i++){
-        printf(" %d", data[i]);
+        printf(" %d", Date[i]);
     }
 }

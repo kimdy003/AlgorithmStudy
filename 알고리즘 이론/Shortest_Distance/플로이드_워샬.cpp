@@ -2,15 +2,15 @@
 using namespace std;
 
 const int INF = 1e9;
-//n : ³ëµåÀÇ °³¼ö, m : °£¼±ÀÇ °³¼ö
+//n : ë…¸ë“œì˜ ê°œìˆ˜, m : ê°„ì„ ì˜ ê°œìˆ˜
 int n, m;
-//³ëµåÀÇ °³¼ö¸¦ ÃÖ´ë 500°³·Î °¡Á¤
+//ë…¸ë“œì˜ ê°œìˆ˜ë¥¼ ìµœëŒ€ 500ê°œë¡œ ê°€ì •
 int graph[501][501];
 
 int main(){
     cin >> n >> m;
 
-    //¹«ÇÑÀ¸·Î ÃÊ±âÈ­, 2Â÷¿ø ¹è¿­
+    //ë¬´í•œìœ¼ë¡œ ì´ˆê¸°í™”, 2ì°¨ì› ë°°ì—´
     for(int i=0; i<501; i++){
         fill(graph[i], graph[i]+501, INF);
     }
@@ -23,14 +23,14 @@ int main(){
         }
     }
 
-    //a¿¡¼­ b±îÁö °¡´Â °Å¸® ºñ¿ëÀÌ c
+    //aì—ì„œ bê¹Œì§€ ê°€ëŠ” ê±°ë¦¬ ë¹„ìš©ì´ c
     for(int i=0; i<m; i++){
         int a, b, c;
         cin >> a >> b >> c;
         graph[a][b] = c;
     }
 
-    //ÇÃ·ÎÀÌµå_¿ö¼£ Á¡È­½Ä Àû¿ë
+    //í”Œë¡œì´ë“œ_ì›Œìƒ¬ ì í™”ì‹ ì ìš©
     for(int k=0; k<=n; k++){
         for(int i = 0; i<=n; i++){
             for(int j=0; j<=n; j++){
@@ -42,7 +42,7 @@ int main(){
     for(int i=0; i<=n; i++){
         for(int j=0; j<=n; j++){
             if(graph[i][j] == INF){
-                cout << "¹«ÇÑ"<< "\n";
+                cout << "ë¬´í•œ"<< "\n";
             }
             else
                 cout << graph[i][j] << "\n";

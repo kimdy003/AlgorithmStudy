@@ -12,9 +12,9 @@ int map[50][50] = {0};
 bool check[50][50];
 Cleaner air_1, air_2;
 pair<int, int> movdir[4] = {{-1,0}, {1,0}, {0, -1}, {0, 1}};
-//�ݽð�
+//반시계
 int ccw[4] = {3, 0, 2, 1};
-//�ð�
+//시계
 int cw[4] = {3, 1, 2, 0};
  
 void all_print(){

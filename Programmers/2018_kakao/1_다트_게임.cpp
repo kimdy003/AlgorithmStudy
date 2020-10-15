@@ -1,4 +1,4 @@
-//´ÙÆ® °ÔÀÓ
+//ë‹¤íŠ¸ ê²Œì„
 #include <string>
 #include <iostream>
 #include <cmath>

@@ -9,7 +9,7 @@ int Find(int x){
     if(parent[x] == x)
         return x;
     
-    //·çÆ® ³ëµå¸¦ Ã£À» ¶§±îÁö Àç±Í È£Ãâ
+    //ë£¨íŠ¸ ë…¸ë“œë¥¼ ì°¾ì„ ë•Œê¹Œì§€ ì¬ê·€ í˜¸ì¶œ
     return Find(parent[x]);
 }
 
@@ -17,7 +17,7 @@ void Union(int a, int b){
     a = Find(a);
     b = Find(b);
 
-    //´õ ÀÛÀº ³ëµå°¡ ºÎ¸ğ ³ëµå·Î...
+    //ë” ì‘ì€ ë…¸ë“œê°€ ë¶€ëª¨ ë…¸ë“œë¡œ...
     if(a < b)
         parent[b] = a;
     
@@ -38,13 +38,13 @@ int main(){
         Union(a, b);
     }
 
-    cout << "°¢ ¿ø¼Ò°¡ ¼ÓÇÑ ÁıÇÕ \n";
+    cout << "ê° ì›ì†Œê°€ ì†í•œ ì§‘í•© \n";
     for(int i=1; i<=v; i++){
         cout << Find(i) << " ";
     }
     cout << "\n";
 
-    cout << "ºÎ¸ğ ³ëµå Å×ÀÌºí \n";
+    cout << "ë¶€ëª¨ ë…¸ë“œ í…Œì´ë¸” \n";
     for(int i=1; i<=v; i++){
         cout << parent[i] << " ";
     }

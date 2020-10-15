@@ -1,9 +1,9 @@
-// ÇÜ½ºÅÍ
+// í–„ìŠ¤í„°
 #include <iostream>
 #include <cstring>
 #include <vector>
 using namespace std;
-int n, x, m, sum_max;        // n: ÇÜ½ºÅÍ ¿ì¸®, x : °¢ ¿ì¸®ÀÇ ÇÜ½ºÅÍ ¼ö, m: ±â·Ï ¼ö
+int n, x, m, sum_max;        // n: í–„ìŠ¤í„° ìš°ë¦¬, x : ê° ìš°ë¦¬ì˜ í–„ìŠ¤í„° ìˆ˜, m: ê¸°ë¡ ìˆ˜
 int cage[7];
 int ans[7];
 vector<pair<pair<int, int>, int>> v;

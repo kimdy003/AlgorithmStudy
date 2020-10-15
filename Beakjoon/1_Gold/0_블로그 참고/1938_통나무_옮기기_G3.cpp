@@ -71,7 +71,7 @@ int BFS(int a, int b){
             return cnt;
         }
         
-        if(shape == 0){ //¤Ñ ¸ð¾ç
+        if(shape == 0){ //ã…¡ ëª¨ì–‘
             //up 
             int ny = y - 1;
             int nx = x;

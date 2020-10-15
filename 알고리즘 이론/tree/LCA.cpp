@@ -5,33 +5,33 @@
 using namespace std;
 
 const int MAX = 10001;
-//depth : ³ëµåÀÇ ±íÀÌ
-//ac[x][y] : xÀÇ 2^y¹øÀç Á¶»óÀ» ÀÇ¸¶
+//depth : ë…¸ë“œì˜ ê¹Šì´
+//ac[x][y] : xì˜ 2^yë²ˆì¬ ì¡°ìƒì„ ì˜ë§ˆ
 int depth[MAX];
 int ac[MAX][20];
 vector<int> graph[MAX];
 int max_level;
 
 void GetTree(int cur, int parent){
-    //curÀÇ ±íÀÌ´Â ºÎ¸ğ³ëµå±íÀÌ +1 
+    //curì˜ ê¹Šì´ëŠ” ë¶€ëª¨ë…¸ë“œê¹Šì´ +1 
     depth[cur] = depth[parent]+1;
 
-    //curÀÇ 1¹øÂ°(2^0)Á¶»óÀº ºÎ¸ğ³ëµå
+    //curì˜ 1ë²ˆì§¸(2^0)ì¡°ìƒì€ ë¶€ëª¨ë…¸ë“œ
     ac[cur][0] = parent;
 
-    //MAX(10001)°³ÀÇ ³ëµå¿¡ ´ëÇÑ ÃÖ´ë ±íÀÌ
-    //2^max_level±îÁö °¥ ¼ö ÀÖ´Ù.
+    //MAX(10001)ê°œì˜ ë…¸ë“œì— ëŒ€í•œ ìµœëŒ€ ê¹Šì´
+    //2^max_levelê¹Œì§€ ê°ˆ ìˆ˜ ìˆë‹¤.
     max_level = (int)floor(log2(MAX));
     for(int i=1; i<=max_level; i++){
-        //temp : curÀÇ 2^(i-1)¹øÂ° Á¶»ó
+        //temp : curì˜ 2^(i-1)ë²ˆì§¸ ì¡°ìƒ
         int temp = ac[cur][i-1];
 
-        // curÀÇ 2^i¹øÂ° Á¶»óÀº 
-        // curÀÇ 2^(i-1)¹øÂ° Á¶»ó(temp)ÀÇ 2^(i-1)¹øÂ° Á¶»ó°ú °°´Ù´Â ÀÇ¹Ì
+        // curì˜ 2^ië²ˆì§¸ ì¡°ìƒì€ 
+        // curì˜ 2^(i-1)ë²ˆì§¸ ì¡°ìƒ(temp)ì˜ 2^(i-1)ë²ˆì§¸ ì¡°ìƒê³¼ ê°™ë‹¤ëŠ” ì˜ë¯¸
         ac[cur][i] = ac[temp][i-1];
     }
 
-    //dfs ¾Ë°í¸®Áò
+    //dfs ì•Œê³ ë¦¬ì¦˜
     for(int i=0; i<graph[cur].size(); i++){
         int next = graph[cur][i];
         if(next != parent){
@@ -55,20 +55,20 @@ int main(){
 
     depth[0] = -1;
 
-    //·çÆ®³ëµåÀÎ 1ºÎÅÍ tree »ı¼º
+    //ë£¨íŠ¸ë…¸ë“œì¸ 1ë¶€í„° tree ìƒì„±
     GetTree(1, 0);
 
-    //Äõ¸®¹® ½ÃÀÛ
+    //ì¿¼ë¦¬ë¬¸ ì‹œì‘
     while(m--){
         int a, b;
         cin >> a >> b;
 
         if(depth[a] != depth[b]){
-            //depth[b] >= depth[a]°¡ µÇµµ·Ï swap
+            //depth[b] >= depth[a]ê°€ ë˜ë„ë¡ swap
             if(depth[a] > depth[b])
                 swap(a, b);
 
-            //b¸¦ ¿Ã·Á¼­ depth¸¦ ¸ÂÃçÁØ´Ù.
+            //bë¥¼ ì˜¬ë ¤ì„œ depthë¥¼ ë§ì¶°ì¤€ë‹¤.
             for(int i=max_level; i>=0; i--){
                 if(depth[a] <= depth[ac[b][i]])
                     b = ac[b][i];

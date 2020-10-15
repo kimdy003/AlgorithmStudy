@@ -1,4 +1,4 @@
-//Á¶ÇÕ
+//ì¡°í•©
 #include<iostream>
  
 #define MAX 5
