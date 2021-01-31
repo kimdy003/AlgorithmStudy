@@ -6,7 +6,7 @@ int n, target;
 vector<int> v;
 
 #if 1
-//재귀를 이용한 이진 탐색
+//재귀를 이용한 이분 탐색
 int Binary_Search(vector<int> v, int target, int start, int end){
     if(start > end)
         return -1;
@@ -25,7 +25,7 @@ int Binary_Search(vector<int> v, int target, int start, int end){
 }
 
 #else
-//반복문을 이용한 이진 탐색
+//반복문을 이용한 이분 탐색
 int Binary_Search(vector<int> v, target, int start, int end){
     while(start <= end){
         int mid = (start + end) / 2;

@@ -1,0 +1,111 @@
+
+memset VS fill
+    memset은 이때 1바이트를 단위로 초기화를 하므로 bool이나 char에 많이 쓴다.
+    int형일때는 1바이트를 넘으므로 0으로 초기화 할 때만 쓴다.
+    고차원 배열도 한줄이면 초기화 가능하다.
+
+    ex) arr배열이 있을 때,   memset(배열이름,초기화 값,배열크기);   memset(arr,0,sizeof(arr)); 
+
+    fill은 memset과 다르게 데이터 형 관계없이 초기화 가능하다.
+    고차원 배열을 초기화 시에는 for문을 돌려야 한다.
+
+    ex) arr 배열이 있을 때
+    fill(시작위치, 끝나는 위치+1, 초기화 값);
+    1차원 : fill(arr,arr+N,0);
+    2차원 : for(int i=0; i<2;i++) fill(arr[i],arr[i]+N,0);
+
+===========================================
+
+Class VS Struct
+    구조체와 클래스 둘 다 연관 있는 데이터를 묶을 수 있는 문법적 장치
+    
+    차이점 : 선언에 따른 차이
+        구조체 
+            구조체의 경우 접근제어 지시자를 따로 선언하지 않는다면 모드느 변수와 함수는 public으로 선언됩니다.
+        
+        클래스
+            접근제어 지시자를 따로 선언하지 않는다면 모든 변수와 함수는 private로 선언됩니다.
+            따라서, main함수에서 초기화가 불가능!!
+
+    +) 접근제어 지시자
+        public : 어디서든 접근허용
+        private : 클래스 내(클래스 내에 정의된 함수)에서만 접근허용
+        protected : 상속관례에 놓여있을 때, 유도 클래스에서의 접근허용
+
+===========================================
+
+Map container
+map<[Data type1], [Data type2]> [변수 이름];
+ex) map<int, int> m1
+    map<string, int> m2;
+
+m[key] = value;
+key값이 존재하는 경우 key값의 value값을 갱신하고 key값이 없는 경우 추가한다.
+
+insert는 pair객체로 인자를 받아야한다.
+ex) m.insert(pair<int, int>(3,3));
+    m.insert(pair<string, int>("me",30));
+
+map<int, string>::iterator iter; 
+    //접근방법 1 
+    for(iter = m.begin(); iter != m.end(); iter++){
+        cout << "[" << iter->first << ", " << iter->second << "]" << " " ;
+    }
+    cout << endl;
+    
+    //접근방법 2 
+    for(iter = m.begin(); iter != m.end(); iter++){
+        cout << "[" << (*iter).first << ", " << (*iter).second << "]" << " " ;
+    }
+
+
+===========================================
+
+Set container
+key라 불리는 원소들의 집합으로 이루어진 컨테이너
+key값은 중복이 허용 되지 않는다.
+
+set<int> s;
+set<pair<int, int>> s;
+
+s.insert(k);
+- 원소 k를 삽입합니다.
+- 삽입시에 자동으로 정렬된 위치에 삽입됩니다.
+- 삽입이 성공 실패에 대한 여부는 리턴값 (pair<iterator, bool>) 으로 나오게됩니다.
+- pair<iterator, bool>에서 pair.first는 삽입한 원소를 가리키는 반복자 이고, pair.second는 성공(true), 실패(false)를 나타냅니다.
+
+s.erase() 
+s에 저장된 요소 삭제 
+s.erase(s.find(x));
+s.erase(s.begin(), s.find(x));
+
+set<int>::iterator iter;
+    for(iter = s.begin(); iter != s.end(); iter++){
+        cout << *iter << " " ;
+    }
+    cout << endl;
+
+(s.find(x) != s.end()) -> key값이 존재 
+
+
+===========================================
+
+cstring VS string
+
+#include <cstring>
+    : c언어에서 쓰는 string
+        -strlen, strcpy 등 함수들이 필요
+        -직관성이 떨어짐
+
+#include <string>
+    : c++에서 사용하는 string Container
+        - 비교연산자 사용 가능 등
+
+    erase() 사용 가능
+    문자열 자르기 : substr()
+
+===========================================
+
+C++ <algorithm>
+
+std::reverse : 문자열 역순으로 만들기 함수
